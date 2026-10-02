@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vicky Yashwa | Network Engineer</title>
+
+    <meta name="description"
+          content="Vicky Yashwa - Network Engineer portfolio. Networking, Cisco, TCP/IP, routing, switching, Python, Java, C++, MySQL and network projects.">
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #e8eef7;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --bg: #07111f;
+            --bg-light: #0b1829;
+            --card: #0d1d31;
+            --border: #1b3552;
+            --blue: #3b82f6;
+            --blue-light: #60a5fa;
+            --text: #e8eef7;
+            --muted: #9aabc0;
+            --white: #ffffff;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: rgba(7, 17, 31, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--blue-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 110px 7% 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(37, 99, 235, 0.12);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: 5%;
+            right: -100px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-title {
+            color: var(--blue-light);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 0.98;
+            margin-bottom: 20px;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: var(--blue-light);
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #c6d4e5;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .location {
+            color: #b7c8dc;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .location span {
+            color: var(--blue-light);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 21px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.25s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: #d7e4f3;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-label {
+            color: var(--blue-light);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 17px;
+            font-size: 16px;
+        }
+
+        .quick-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .info-card strong {
+            display: block;
+            color: var(--blue-light);
+            font-size: 13px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card span {
+            color: #d7e3f0;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 11px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue);
+        }
+
+        .skill-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--blue-light);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: var(--bg-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue);
+        }
+
+        .project-number {
+            color: var(--blue-light);
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tag {
+            border: 1px solid var(--border);
+            padding: 4px 9px;
+            border-radius: 5px;
+            color: #bcd0e5;
+            font-size: 12px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            border-left: 2px solid var(--border);
+            margin-left: 8px;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            background: var(--blue);
+            border-radius: 50%;
+            left: -37px;
+            top: 7px;
+            box-shadow: 0 0 0 5px var(--bg);
+        }
+
+        .timeline-date {
+            color: var(--blue-light);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h3 {
+            font-size: 21px;
+            margin-bottom: 3px;
+        }
+
+        .company {
+            color: #bdcce0;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item ul {
+            color: var(--muted);
+            padding-left: 18px;
+        }
+
+        .timeline-item li {
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            padding: 27px;
+            max-width: 900px;
+        }
+
+        .education-card h3 {
+            font-size: 21px;
+            margin-bottom: 5px;
+        }
+
+        .education-card .university {
+            color: var(--blue-light);
+            margin-bottom: 12px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           CERTIFICATIONS
+        ========================= */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .cert {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 18px 20px;
+            border-radius: 9px;
+            color: #d7e4f3;
+        }
+
+        .cert span {
+            color: var(--blue-light);
+            font-size: 12px;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-box {
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 13px;
+            padding: 40px;
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-link {
+            border: 1px solid var(--border);
+            padding: 10px 16px;
+            border-radius: 7px;
+            color: #c9d8e9;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--blue);
+            color: white;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 25px 7%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: #708198;
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                background: #07111f;
+                flex-direction: column;
+                padding: 20px 7%;
+                display: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 70px 5%;
+            }
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-info {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 25px 18px;
+            }
+        }
+
+        /* =========================
+           FADE ANIMATION
+        ========================= */
+
+        .fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.7s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+        <a href="#home" class="logo">VICKY<span>.</span></a>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content fade">
+
+            <div class="small-title">
+                Portfolio
+            </div>
+
+            <h1>
+                Vicky<br>
+                <span>Yashwa</span>
+            </h1>
+
+            <h2>
+                Network Engineer
+            </h2>
+
+            <p class="hero-description">
+                B.Tech Information Technology graduate with a strong foundation
+                in networking, routing and switching, TCP/IP and network
+                troubleshooting. Currently developing my networking expertise
+                through CCNA and CCNP studies.
+            </p>
+
+            <div class="location">
+                <span>●</span> Kuwait / Chennai, India
+            </div>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="fade">
+
+            <div class="section-label">
+                About Me
+            </div>
+
+            <h2 class="section-title">
+                Building my career in networking.
+            </h2>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text fade">
+
+                <p>
+                    I am a B.Tech Information Technology graduate from
+                    Madras Institute of Technology, Anna University,
+                    with a primary interest in Network Engineering.
+                </p>
+
+                <p>
+                    My current focus is on developing practical knowledge
+                    in computer networks, routing, switching, TCP/IP,
+                    Cisco networking and network troubleshooting.
+                </p>
+
+                <p>
+                    Alongside networking, I have experience with Python,
+                    Java, C++, MySQL and other technical tools. I am
+                    interested in using programming and automation to
+                    improve network operations.
+                </p>
+
+            </div>
+
+            <div class="quick-info fade">
+
+                <div class="info-card">
+                    <strong>Education</strong>
+                    <span>B.Tech Information Technology</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>Specialization</strong>
+                    <span>Network Engineering</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>Location</strong>
+                    <span>Kuwait / Chennai, India</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>Focus</strong>
+                    <span>Cisco & Networking</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="fade">
+
+            <div class="section-label">
+                Technical Skills
+            </div>
+
+            <h2 class="section-title">
+                My technical toolkit.
+            </h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card fade">
+
+                <div class="skill-icon">
+                    ⇄
+                </div>
+
+                <h3>Networking</h3>
+
+                <p>
+                    TCP/IP, routing and switching, LAN/WAN,
+                    network troubleshooting, Cisco networking
+                    and CCNA concepts.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card fade">
+
+                <div class="skill-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h3>Programming</h3>
+
+                <p>
+                    Python, Java, C++ and C.
+                    Interested in automation and
+                    technical problem solving.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card fade">
+
+                <div class="skill-icon">
+                    DB
+                </div>
+
+                <h3>Databases</h3>
+
+                <p>
+                    MySQL and MongoDB with knowledge
+                    of database concepts and SQL.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card fade">
+
+                <div class="skill-icon">
+                    C
+                </div>
+
+                <h3>Cisco</h3>
+
+                <p>
+                    Cisco Packet Tracer, routing,
+                    switching and network configuration.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card fade">
+
+                <div class="skill-icon">
+                    ☁
+                </div>
+
+                <h3>Cloud</h3>
+
+                <p>
+                    AWS fundamentals and basic
+                    understanding of cloud infrastructure.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card fade">
+
+                <div class="skill-icon">
+                    +
+                </div>
+
+                <h3>Other Skills</h3>
+
+                <p>
+                    Problem solving, communication,
+                    teamwork and network security basics.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section class="projects" id="projects">
+
+        <div class="fade">
+
+            <div class="section-label">
+                Projects
+            </div>
+
+            <h2 class="section-title">
+                Selected projects.
+            </h2>
+
+            <p class="section-description">
+                A selection of academic and technical projects
+                demonstrating my problem-solving and engineering skills.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card fade">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    AI-Driven Stroke Prognosis & Ischemic Region Evaluation
+                </h3>
+
+                <p>
+                    Developed a deep-learning framework for ischemic stroke
+                    detection and lesion segmentation using multimodal MRI data.
+                    Implemented DenseNet121 and attention-enhanced CNN
+                    architectures.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">CNN</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card fade">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Quantum-Safe Multi-Party Computation
+                </h3>
+
+                <p>
+                    Developed a post-quantum secure MPC framework using
+                    LWE-based Secret-Shared Fully Homomorphic Encryption,
+                    with techniques to improve computational efficiency
+                    and reduce communication overhead.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Cryptography</span>
+                    <span class="tag">MPC</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">LWE</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card fade">
+
+                <div class="project-number">
+                    NETWORKING LABS
+                </div>
+
+                <h3>
+                    Cisco Networking Practice
+                </h3>
+
+                <p>
+                    Practical networking exercises involving routing,
+                    switching, TCP/IP, network troubleshooting and
+                    Cisco Packet Tracer configurations.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Cisco</span>
+                    <span class="tag">Packet Tracer</span>
+                    <span class="tag">Routing</span>
+                    <span class="tag">Switching</span>
+                    <span class="tag">TCP/IP</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card fade">
+
+                <div class="project-number">
+                    TECHNICAL DEVELOPMENT
+                </div>
+
+                <h3>
+                    Networking & Automation
+                </h3>
+
+                <p>
+                    Developing practical networking knowledge while
+                    exploring Python, programming and automation concepts
+                    that can support network administration and operations.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Networking</span>
+                    <span class="tag">Automation</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section id="experience">
+
+        <div class="fade">
+
+            <div class="section-label">
+                Experience
+            </div>
+
+            <h2 class="section-title">
+                Professional experience.
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item fade">
+
+                <div class="timeline-date">
+                    JUN 2024 — AUG 2024
+                </div>
+
+                <h3>
+                    AI / ML Intern
+                </h3>
+
+                <div class="company">
+                    Harpy Aerospace Pvt. Ltd.
+                </div>
+
+                <ul>
+                    <li>
+                        Designed recommendation systems using
+                        TensorFlow Recommenders and MovieLens datasets.
+                    </li>
+
+                    <li>
+                        Developed matrix factorization and neural
+                        network models.
+                    </li>
+
+                    <li>
+                        Used Adagrad optimization and FactorizedTopK
+                        metrics for model evaluation.
+                    </li>
+
+                    <li>
+                        Collaborated with mentors and team members
+                        to implement machine learning solutions.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section class="about" id="education">
+
+        <div class="fade">
+
+            <div class="section-label">
+                Education
+            </div>
+
+            <h2 class="section-title">
+                Academic background.
+            </h2>
+
+        </div>
+
+
+        <div class="education-card fade">
+
+            <h3>
+                B.Tech — Information Technology
+            </h3>
+
+            <div class="university">
+                Madras Institute of Technology, Anna University
+            </div>
+
+            <p>
+                Chennai, Tamil Nadu, India
+            </p>
+
+            <p style="margin-top: 12px;">
+                2022 — 2026
+            </p>
+
+            <p style="margin-top: 12px;">
+                Relevant coursework: Computer Networks, Operating Systems,
+                DBMS, Data Structures, Software Engineering,
+                Machine Learning and Cloud Computing.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================= -->
+
+    <section id="certifications">
+
+        <div class="fade">
+
+            <div class="section-label">
+                Certifications
+            </div>
+
+            <h2 class="section-title">
+                Certifications & training.
+            </h2>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+            <div class="cert fade">
+                Cisco Certified Network Associate (CCNA)
+                <span>In Progress</span>
+            </div>
+
+            <div class="cert fade">
+                Cisco Certified Network Professional (CCNP)
+                <span>In Progress</span>
+            </div>
+
+            <div class="cert fade">
+                AWS Academy Cloud Foundations
+                <span>Amazon Web Services — 2024</span>
+            </div>
+
+            <div class="cert fade">
+                AI / ML Internship Certification
+                <span>Harpy Aerospace Pvt. Ltd. — 2024</span>
+            </div>
+
+            <div class="cert fade">
+                Extron AV Associate Certification
+            </div>
+
+            <div class="cert fade">
+                Crestron Engineer Certification
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-box fade">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+                I am currently interested in Network Engineer,
+                Network Support and related entry-level IT opportunities.
+            </p>
+
+
+            <div class="contact-links">
+
+                <a
+                    class="contact-link"
+                    href="mailto:yashwavicky1@gmail.com">
+                    Email
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="tel:+96555169003">
+                    Phone
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/Yashwa04"
+                    target="_blank">
+                    GitHub
+                </a>
+
+                <!--
+                    Replace YOUR-LINKEDIN-USERNAME with your
+                    actual LinkedIn username.
+                -->
+
+                <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/"
+                    target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Vicky Yashwa · Network Engineer
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* Mobile menu */
+
+        function toggleMenu() {
+
+            const menu = document.getElementById("navLinks");
+
+            menu.classList.toggle("active");
+
+        }
+
+
+        /* Close mobile menu after clicking */
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document.getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+        /* Scroll reveal animation */
+
+        const observer = new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        document.querySelectorAll(".fade").forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+    </script>
+
+</body>
+</html>
